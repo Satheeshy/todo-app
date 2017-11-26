@@ -1,0 +1,80 @@
+<div class="container">
+
+    <div class="col-lg-8 col-md-12 col-sm-12 offset-lg-2">
+        <div *ngIf="showMessage" class="alert alert-success">
+            <strong>{{message}}</strong>
+        </div>
+        <div *ngIf="!showMessage" class="alert text-center">
+            <strong>Welcome To Thinix - Programming Challenge</strong>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <strong>Todo App</strong>
+                    <span class="pull-right">
+                        <button type="button" class="btn btn-info" (click)="addTask()">
+                            Add
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteTask()">Delete</button>
+                    </span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <hr>
+                <ul id="sortable" class="list-unstyled">
+                    <li class="ui-state-default" *ngFor="let t of todos ; let i=index">
+                        <div class="checkbox">
+                            <input type="checkbox" (change)="taskToDelete(t,$event)" />
+                            <label>
+                                <span [class.done]="t.done" (click)="toggle(t)">{{t.title}}</span>
+                            </label>
+                            <span class="pull-right">
+                                <button class="btn btn-warning btn-sm" (click)="viewMore(i)"> + </button>
+                                <button (click)="edit(t.id)" class="btn btn-success btn-sm">Edit</button>
+                            </span>
+                        </div>
+                        <div *ngIf="showMore == i">
+                            <div class="card-block">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label>ID</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>{{t.id}}</label>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col">
+                                        <label>Title</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>{{t.title}}</label>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col">
+                                        <label>Description</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>{{t.description}}</label>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col">
+                                        <label>Done</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <label>{{t.done}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container center_div">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Add Task
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="id">ID</label>
+                            <input type="text" formControlName="id" placeholder="id" class="form-control">
+                            <div *ngIf="id.invalid && id.touched" class="alert">
+                                <div *ngIf="id.errors.required">ID is required</div>
+                                <div *ngIf="id.errors.pattern">please enter valid number</div>
+                                <div *ngIf="id.errors.unique">Please provide unique ID for task</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" formControlName="title" placeholder="Title" class="form-control">
+                            <div *ngIf="title.invalid && title.touched" class="alert">
+                                <div *ngIf="title.errors.required">Title is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" formControlName="description" placeholder="Description" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="due">Due</label>
+                            <input type="text" formControlName="due" placeholder="MM/DD/YYY" class="form-control">
+                            <div *ngIf="due.invalid && due.touched" class="alert">
+                                <div *ngIf="due.errors.pattern">Date Format is not correct</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button [routerLink]="['/']" class="btn btn-md btn-info pull-left">Back</button>
+                <button [disabled]="!form.valid" class="btn btn-lg btn-success btn-lg pull-right" (click)="createTask()">Create Task</button>
+            </form>
+        </div>
+
+    </div>

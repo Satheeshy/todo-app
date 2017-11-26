@@ -1,0 +1,37 @@
+{
+  "name": "thinix-angular-programming-challenge",
+  "version": "1.0.0",
+  "description": "This is an Angular 4+ programming challenge that serves the purpose of screening job applicants for basic fundamentals of Angular.",
+  "scripts": {
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
+    "serve": "lite-server -c=src/config/bs-config.json",
+    "prestart": "npm run build",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "complete": "node src/config/rimraf.js node_modules"
+  },
+  "author": "Ross Reicks",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/router": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "angular-in-memory-web-api": "^0.3.2",
+    "core-js": "^2.4.1",
+    "moment": "^2.18.1",
+    "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "concurrently": "^3.2.0",
+    "lite-server": "^2.2.2",
+    "typescript": "~2.1.0"
+  }
+}

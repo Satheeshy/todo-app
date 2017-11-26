@@ -1,0 +1,41 @@
+
+.center_div{
+    width:50%;
+  
+    margin-bottom: 80px;
+  }
+  @media (max-width: 576px) { 
+    .center_div{
+        width:100%;
+    }
+  }
+  .panel-heading{
+      font-size: 1.7rem;
+      text-align: center;
+      color: white;
+      background-color:#337ab7;
+      border-radius: 25px;
+      padding-bottom: 10px;
+      padding-top:10px;
+  }
+  .panel-body{
+    padding-top:10px;
+      font-size: 1rem;
+
+  }
+  .ng-valid[required], .ng-valid.required  {
+      border-left: 5px solid #42A948; /* green */
+    }
+    .ng-invalid:not(form)  {
+      border-left: 5px solid #a94442; /* red */
+    }
+    input.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+    .alert{
+      color: white;
+      background-color : #337ab7;
+      border-color: red;
+    }
+
+    

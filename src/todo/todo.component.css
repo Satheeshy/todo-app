@@ -1,0 +1,21 @@
+.panel
+{
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.done{
+    text-decoration: line-through;
+    color : #999999;
+}
+
+.card-block{
+    color: white;
+    background-color: black;
+}
+li{
+    padding-bottom: 10px;
+}
+
+
